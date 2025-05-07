@@ -1,0 +1,139 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    background-image: url('./Fotos/Fondo.png');
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: -1;
+}
+
+.foto-perfil img{
+    width: 150px;
+    height: 200px;
+    border-radius: 15px;
+}
+
+.slider-container{
+    position: relative;
+    width: 500px;
+    height: 200px;
+    perspective: 1000px;
+}
+
+.slider {
+    margin-left: 15%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: rotate 40s infinite linear;
+}
+
+.slide {
+    position: absolute;
+    width: 40%;
+    height: 60%;
+    left: 20%;
+    top: 10%;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 00.3);
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide:nth-child(1) {transform: rotateY(0deg) translateZ(200px);}
+.slide:nth-child(2) {transform: rotateY(90deg) translateZ(200px);}
+.slide:nth-child(3) {transform: rotateY(180deg) translateZ(200px);}
+.slide:nth-child(4) {transform: rotateY(270deg) translateZ(200px);}
+
+@keyframes rotate {
+    0% { transform: rotateY(0deg); }
+    25% { transform: rotateY(90deg); }
+    50% { transform: rotateY(180deg); }
+    75% { transform: rotateY(270deg); }
+}
+
+.titulo{
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin-bottom: 10px;
+}
+
+nav{
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+.botones button {
+    margin: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    padding: 10px 20px;
+    border: none;
+    background-color: #2e05863f;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.botones button:hover {
+    background-color: #0bfde988;
+}
+
+.seccion {
+    display: none;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.bi{
+    color: rgb(144, 143, 143);
+}
+
+a{
+    color: white;
+}
+
+a:hover{
+    color: rgba(249, 95, 154, 0.559);
+}
+
+.txt{
+    color: white;
+}
